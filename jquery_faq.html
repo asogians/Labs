@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .turn  {
+            visibility: hidden;
+        }
+        .pictureFrame1 {
+            border: solid orange 3px;
+            height: 150px;
+            width: 150px;
+            float: left;
+        }
+        .pictureFrame2 {
+            border: solid orange 3px;
+            height: 150px;
+            width: 150px;
+            float: left;
+        }
+        .pictureFrame3 {
+            border: solid orange 3px;
+            height: 150px;
+            width: 150px;
+            float: left;
+        }
+        .imageOne{
+            background-image: url('img/bluescreen.jpg');
+
+        }
+        .imageTwo{
+            background-image: url("img/blueskyday.jpg");
+
+        }
+        .imageThree{
+            background-image: url("img/pizzabackground.png");
+
+        }
+        .blockOneImgTwo {
+
+        }
+
+        .nationalParks{
+            display: none;
+        }
+        #hiddenHeader{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Would you lioke to sign up for our news letter?</h1>
+    <span id="spanX">X</span>
+</div>
+<h2 id="hiddenHeader">Please Sign up!</h2>
+<h1>FAQ</h1>
+<dl>
+    <dt>Do you accept checks?</dt>
+    <dd class="invisible turn">Yes. We take personal, business, and travelers checks for entrance fees and tour fees. We accept travelers checks for bookstore purchases.
+        All checks must be drawn in US dollars from a US bank. Personal checks $50 and over must include a social security number.
+        Business checks $50 and over must include a tax ID number.</dd>
+    <dt>When is the visitor center open?</dt>
+    <dd class="invisible turn">
+        The visitor center is open daily at least from 9 am to 4 pm,
+        (except December 25), with extended hours spring through fall.
+    </dd>
+    <dt>Where can I get extra brochures?</dt>
+    <dd class="invisible turn">Canyonlands Natural History Association operates the bookstore in our visitor center and sells the official Arches National
+        Park brochure that is handed out at the entrance station.
+    </dd>
+    <dt>Where can I buy an item I saw in your visitor center?</dt>
+    <dd class="invisible turn">
+        Canyonlands Natural History Association operates the bookstores in our visitor centers.
+    </dd>
+    <dt>Does the park close at night?</dt>
+    <dd class="invisible turn">
+        No, the park is open 24 hours a day.
+    </dd>
+    <dt>Can I get an entrance fee waiver?</dt>
+    <dd class="invisible turn">
+        Yes. If you are an educational group whose visit is educational rather than recreational.
+    </dd>
+    <dt>What is the weather?</dt>
+    <dd class="invisible turn">
+        You can get a general idea of seasonal conditions and temperature and precipitation averages on our weather page.
+    </dd>
+    <dt>Are there public phones in the park?</dt>
+    <dd class="invisible turn">
+        Yes. There are pay phones available outside the visitor center. There are no pay phones at the campground.
+    </dd>
+    <dt>Will my cell phone work in Arches?</dt>
+    <dd class="invisible turn">
+        Maybe. You may find limited coverage in some areas of the park. In other areas, coverage is poor to nonexistent.
+        Do not count on being able to receive service.
+    </dd>
+    <dt>Do you accept credit cards or debit cards?</dt>
+    <dd class="invisible turn">
+        Yes. We accept Visa, MasterCard, Discover, and American Express for entrance fees and tour fees.
+        You may use your Visa, MasterCard, and Discover for bookstore purchases.
+    </dd>
+</dl>
+<h3>Yellow Stone</h3>
+<ul class="nationalParks">
+    <li>larger than Rhode Island and Delaware combined</li>
+    <li>More than 10,000 hydrothermal features</li>
+    <li>More than 500 active geysers</li>
+    <li>Yellowstone Lake has 131.7 sq. miles of surface area and 141 miles of shoreline.
+        It is the largest high elevation lake in North America.</li>
+</ul>
+<h3>Yosemite</h3>
+<ul class="nationalParks">
+    <li>747,956 acres of land</li>
+    <li>The Ahwaneechee Native Americans lived in the Yosemite
+        Valley for at least 4,000 years.</li>
+    <li>Yosemite National Park, established October 1, 1890,
+        is one of the oldest nature preserves in the US.</li>
+    <li>Yosemite Falls is the tallest waterfall in North America.</li>
+</ul>
+<h3>Grand Canyon</h3>
+<ul class="nationalParks">
+    <li>Is bigger than the state of Rhode Island.</li>
+    <li>The Grand Canyon itself can influence the weather.</li>
+    <li> Tucked within the Grand Canyon are an estimated 1,000 caves, and of those, 335 have been recorded</li>
+    <li>The most dangerous animal in the park is the rock squirrel.</li>
+</ul>
+<button type="submit" id="liButton">Click for highlighted li</button>
+<div id="showAnswers">Show Answers</div>
+<div class="pictureFrame1 imageOne"></div>
+<div class="pictureFrame2 imageTwo"></div>
+<div class="pictureFrame3 imageThree"></div>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict"
+
+
+    $("#showAnswers").click(function (event) {
+        event.preventDefault();
+        $(".invisible").toggleClass("turn");
+    });
+
+    $('#liButton').click(function () {
+        $('li').last().css('background-color', 'yellow');
+    });
+    // $('h3').click(function () {
+    //     $(this).next().children().css('font-weight', 'bold');
+    // });
+
+    $('li').click(function () {
+        $(this).parent().children().first().css('color', 'blue');
+    });
+    $('#spanX').click(function () {
+        $(this).parent().hide();
+    });
+    $('h3').click(function () {
+        $(this).next().slideToggle(1000);
+    });
+    $('#hiddenHeader').delay(8000).fadeIn(1000);
+    $('#hiddenHeader').click(function () {
+        $(this).hide();
+    });
+    $('.pictureFrame1').click(function () {
+        $(this).toggleClass(function () {
+            if($(this).is('.imageOne')){
+                return "imageOne imageTwo"
+            } else if($(this).is('imageTwo')){
+                return "imageTwo imageThree"
+            } else {
+                return "imageOne imageThree"
+            }
+        });
+        $('.pictureFrame2').toggleClass(function () {
+            if($(this).is('.imageOne')){
+                return "imageOne imageTwo"
+            } else if($(this).is('imageTwo')){
+                return "imageTwo imageThree"
+            } else {
+                return "imageOne imageThree"
+            }
+        });
+    });
+    $('.pictureFrame3').click(function () {
+        $(this).toggleClass(function () {
+            if($(this).is('.imageOne')){
+                return "imageOne imageTwo"
+            } else if($(this).is('imageTwo')){
+                return "imageTwo imageThree"
+            } else {
+                return "imageOne imageThree"
+            }
+        });
+        $('.pictureFrame2').toggleClass(function () {
+            if($(this).is('.imageOne')){
+                return "imageOne imageTwo"
+            } else if($(this).is('imageTwo')){
+                return "imageTwo imageThree"
+            } else {
+                return "imageOne imageThree"
+            }
+        });
+    });
+
+
+// function randomSide() {
+//    var randomNumber =  Math.floor(Math.random() * (2 - 1 + 1) + 1)
+//     if (randomNumber === 1){
+//         $(this).toggleClass('imageOne imageTwo');
+//         $('.pictureFrame1').toggleClass('imageTwo imageOne');
+//     } else {
+//         $(this).toggleClass('imageThree imageTwo');
+//         $('.pictureFrame2').toggleClass('imageTwo imageThree');
+//     }
+// };
+
+randomSide()
+
+</script>
+</body>
+</html>
