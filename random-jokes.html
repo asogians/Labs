@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Random Jokes!</title>
+    <style>
+
+        .btnLeft {
+            float: left;
+            margin-left: 30%;
+            margin-top: 10%;
+        }
+
+        .btnRight {
+            float: right;
+            margin-right: 30%;
+            margin-top: 10%;
+        }
+
+        #jokeFrame {
+            border: 2px solid black;
+            height: 500px;
+            width: 300px;
+            text-align: center;
+            margin-left: 41%;
+        }
+
+        p {
+            float: right;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center">Let's hear some jokes!</h1>
+
+<div>
+    <div class="rightDiv"><button class="btn btnRight" type="button">Right</button></div>
+    <div class="leftDiv"><button class="btn btnLeft" type="button">Left</button>
+        <div id="jokeFrame">Content</div>
+    </div>
+</div>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    (function() {
+        "use strict";
+
+        //Generate Chuck joke
+
+        function chuckJoke() {
+            $.ajax("http://api.icndb.com/jokes/random").done(function (joke) {
+                var string = '';
+                string += joke.value.joke;
+                $('#jokeFrame').append(string);
+            });
+        }
+
+        $('.btnLeft').click(function(){
+            $('#jokeFrame').html('');
+            chuckJoke();
+        });
+
+        //Generate Programming Quote
+
+        function generateQuote() {
+            $.ajax("https://cors-anywhere.herokuapp.com/http://quotes.stormconsultancy.co.uk/random.json").done(function(data) {
+                console.log(data);
+                var string = '<p><b>' + "''" + data.quote + "''" + '</b></p>' + '<p>' + '- ' + data.author + '</p>';
+                $('#jokeFrame').append(string);
+            });
+        }
+
+        $('.btnRight').click(function() {
+            $('#jokeFrame').html('');
+            generateQuote()
+        });
+
+    })();
+
+</script>
+</body>
+
+</html>
