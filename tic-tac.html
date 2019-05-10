@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/tic-tac.css">
+</head>
+<body>
+
+<div class="left-container">
+    <div class="tic-tac-toe-title">
+        <h1>Tic Tac Toe</h1>
+    </div>
+
+    <div class="tic-tac-toe-table">
+        <div class="small-square" id="square-1"></div>
+        <div class="small-square" id="square-2"></div>
+        <div class="small-square" id="square-3"></div>
+        <div class="small-square" id="square-4"></div>
+        <div class="small-square" id="square-5"></div>
+        <div class="small-square" id="square-6"></div>
+        <div class="small-square" id="square-7"></div>
+        <div class="small-square" id="square-8"></div>
+        <div class="small-square" id="square-9"></div>
+    </div>
+</div>
+
+<div class="right-container">
+
+    <!--message portal-->
+
+    <div class="message-portal">
+        <div class="button">
+            <button class="start-game">When each player picks an icon, click here to play!</button>
+        </div>
+        <div class="player-one-turn-info">
+            <h3>It's player one's turn!</h3>
+            <div class="player-one-big-icon"></div>
+            <button class="reset-game">Click here to reset!</button>
+        </div>
+        <div class="player-two-turn-info">
+            <h3>It's player two's turn!</h3>
+            <div class="player-two-big-icon"></div>
+            <button class="reset-game">Click here to reset!</button>
+        </div>
+    </div>
+
+    <!--pick an icon-->
+
+    <div class="pick-icon-screen">
+        <div class="which-player">
+            <button id="player-one-button">player one</button>
+            <button id="player-two-button">player two</button>
+            <div class="icon-grid-container">
+                <div class="icon-square icon-square1"></div>
+                <div class="icon-square icon-square2"></div>
+                <div class="icon-square icon-square3"></div>
+                <div class="icon-square icon-square4"></div>
+                <div class="icon-square icon-square5"></div>
+                <div class="icon-square icon-square6"></div>
+                <div class="icon-square icon-square7"></div>
+                <div class="icon-square icon-square8"></div>
+                <div class="icon-square icon-square9"></div>
+                <div class="icon-square icon-square10"></div>
+                <div class="icon-square icon-square11"></div>
+                <div class="icon-square icon-square12"></div>
+                <div class="icon-square icon-square13"></div>
+                <div class="icon-square icon-square14"></div>
+                <div class="icon-square icon-square15"></div>
+                <div class="icon-square icon-square16"></div>
+                <div class="icon-square icon-square17"></div>
+                <div class="icon-square icon-square18"></div>
+            </div>
+            <div class="player-turn-message">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/tic-tac.js"></script>
+</body>
+</html>

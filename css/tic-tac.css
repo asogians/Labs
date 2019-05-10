@@ -1,0 +1,241 @@
+/*small screens*/
+
+@media screen and (min-width: 280px) {
+    body {
+        background-color: lightgreen;
+    }
+    .left-container {
+        width: 100%;
+        height: 400px;
+
+    }
+    .right-container {
+        width: 100%;
+        height: 500px;
+
+    }
+
+    /*tic-tac-toe table and title*/
+
+    .tic-tac-toe-title {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+    .tic-tac-toe-table {
+        width: 300px;
+        height: 300px;
+        border: 3px solid black;
+        box-shadow: 4px 4px 12px black;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0;
+        background-color: white;
+    }
+    .small-square {
+        width: 98px;
+        height: 98px;
+        float: left;
+        border: 1px solid black;
+    }
+
+    /*message portal*/
+
+    .message-portal {
+        width: 350px;
+        height: 200px;
+        margin: 20px auto;
+        border: 2px solid black;
+        box-shadow: 4px 4px 12px black;
+        text-align: center;
+        background-color: white;
+    }
+    .button {
+        line-height: 200px;
+    }
+    .start-game {
+        font-size: 25px;
+        border-radius: 5px 5px 5px 5px;
+        padding: 0;
+        width: 80%;
+    }
+    .start-game:hover {
+        font-size: 25px;
+        background-image: linear-gradient(black, grey);
+        color: white;
+    }
+    .player-one-turn-info {
+        display: none;
+        height: 200px;
+    }
+    .player-two-turn-info {
+        display: none;
+        height: 200px;
+    }
+    .reset-game {
+        font-size: 25px;
+        border-radius: 5px 5px 5px 5px;
+        margin-top: 5px;
+    }
+    .reset-game:hover {
+        font-size: 25px;
+        background-image: linear-gradient(black, grey);
+        color: white;
+    }
+
+    /*pick icon screen*/
+
+    .pick-icon-screen {
+        width: 350px;
+        height: 250px;
+        margin: 20px auto;
+        border: 2px solid black;
+        box-shadow: 4px 4px 12px black;
+        text-align: center;
+        background-color: white;
+        overflow: hidden;
+    }
+
+    #player-one-button {
+        font-size: 18px;
+        background-color: deepskyblue;
+        border: 3px solid white;
+    }
+    #player-two-button {
+        font-size: 18px;
+        background-color: yellow;
+        border: 3px solid white;
+    }
+    #player-one-button:hover,
+    #player-one-button:focus {
+        font-size: 18px;
+        background-color: deepskyblue;
+        border: 3px solid black;
+        outline: none;
+    }
+    #player-two-button:hover,
+    #player-two-button:focus {
+        font-size: 18px;
+        background-color: yellow;
+        border: 3px solid black;
+        outline: none;
+    }
+    .icon-grid-container {
+        height: 165px;
+        width: 90%;
+        margin: 5px auto;
+    }
+    .player-one-select {
+        background-color: deepskyblue;
+    }
+    .player-two-select {
+        background-color: yellow;
+    }
+
+    .player-one-message {
+        color: deepskyblue;
+        background-color: black;
+        font-size: larger;
+        display: inline-block;
+        padding: 3px;
+    }
+    .player-two-message {
+        color: yellow;
+        background-color: black;
+        font-size: larger;
+        display: inline-block;
+        padding: 3px;
+    }
+
+
+
+
+
+    /*Icon declarations*/
+
+
+    .player-one-big-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+    .player-two-big-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+    .icon-square
+    {
+        border: 1px solid red;
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin: 0;
+        padding: 0;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .icon-square:hover
+    {
+        background-size: 100%;
+    }
+
+
+}
+
+
+
+
+
+
+/*medium screens*/
+
+@media screen and (min-width: 780px) {
+
+    body {
+        width: 100%;
+        background-color: #3B94D9;
+    }
+
+    .right-container,
+    .left-container {
+        float: left;
+        width: 50%;
+    }
+
+}
+
+
+/*big screens*/
+
+
+@media screen and (min-width: 1050px) {
+    body {
+        background-color: yellow;
+    }
+    .tic-tac-toe-title {
+        width: 65%;
+        float: right;
+        text-align: center;
+    }
+    .tic-tac-toe-table {
+        width: 400px;
+        height: 400px;
+        border: 3px solid black;
+        box-shadow: 4px 4px 12px black;
+        overflow: hidden;
+        padding: 0;
+        background-color: white;
+        float: right;
+    }
+    .small-square {
+        width: calc(394px / 3);
+        height: calc(394px / 3);
+        float: left;
+        border: 1px solid black;
+    }
+    .pick-icon-screen,
+    .message-portal {
+    }
+}
